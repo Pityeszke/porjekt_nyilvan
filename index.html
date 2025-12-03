@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>trello</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Projektmunka Nyilvántartó</h1>
+       <div class="input-container">
+        <input type="text" id="Feladat" placeholder="Új feladat">
+        <button id="add-btn" onclick="hozzáad()">Hozzáadás</button>
+    </div>
+    <div class="board">
+        <div class="column" id="Feladatok">
+            <h2>Teendők</h2>
+        </div>
+        <div class="column" id="Folyamat">
+            <h2>Folyamatban</h2>
+        </div>
+        <div class="column" id="Kész">
+            <h2>Kész</h2>
+        </div>
+    </div>
     <script src="java.js"></script>
 </body>
 </html>
