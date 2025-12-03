@@ -7,27 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="text" name="" id="Feladat">
-    <div id="Feladatok" ></div>
-    <button onclick="hozzáad()">Házas</button>
-    <div id="Folyamat"></div>
-    <div id="Kész"></div>
-    <script src="java.js"></script>
     <h1>Projektmunka Nyilvántartó</h1>
        <div class="input-container">
-        <input type="text" id="todo-input" placeholder="Új feladat">
-        <button id="add-btn">Hozzáadás</button>
+        <input type="text" id="Feladat" placeholder="Új feladat">
+        <button id="add-btn" onclick="hozzáad()">Hozzáadás</button>
     </div>
     <div class="board">
-        <div class="column" id="todo">
+        <div class="column" id="Feladatok">
             <h2>Teendők</h2>
         </div>
-        <div class="column" id="in-progress">
+        <div class="column" id="Folyamat">
             <h2>Folyamatban</h2>
         </div>
-        <div class="column" id="done">
+        <div class="column" id="Kész">
             <h2>Kész</h2>
         </div>
     </div>
+    <script src="java.js"></script>
 </body>
 </html>
