@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#todo-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 250px;
+}
+
+#add-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background: #1976d2;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#add-btn:hover {
+    background: #1565c0;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.column {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 20px;
+    min-height: 350px;
+    transition: box-shadow 0.2s;
+}
+
+.column h2 {
+    text-align: center;
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+
+.task {
+    background: #e3f2fd;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    cursor: grab;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.08);
+    transition: background 0.2s;
+}
+
+.task.dragging {
+    background: #bbdefb;
+    opacity: 0.7;
+}
+
+.column.drag-over {
+    box-shadow: 0 0 0 3px #1976d2 inset;
+}
