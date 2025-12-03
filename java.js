@@ -29,7 +29,7 @@ function hozzáad(){
     
     újelem.appendChild(törlésGomb)
     FeladatokDiv.appendChild(újelem);
-    
+    localStorage.setItem(újelem.id,újelem)
 }
 function dragstartHandler(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
