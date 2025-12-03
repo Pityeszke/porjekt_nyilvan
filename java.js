@@ -10,13 +10,26 @@ function hozzáad(){
     KészDiv.ondrop = dropHandler;
     KészDiv.ondragover = dragoverHandler;
     var újelem = document.createElement("div");
+    var törlésGomb = document.createElement("button")
     újelem.className = "feladat";
     újelem.textContent = FeladatInput;
     újelem.draggable = true;
     újelem.ondragstart = dragstartHandler;
     újelem.id = "elem" + Math.floor(Math.random() * 10000);
     újelem.style.backgroundColor = "rgb(245,245,220)";
+    törlésGomb.onclick = function(){
+        törlés(újelem.id)
+    }
+    törlésGomb.textContent = "X"
+    törlésGomb.style.backgroundColor = "red"
+    törlésGomb.style.border = "none"
+    törlésGomb.style.borderRadius = "5px"
+    törlésGomb.style.margin = "5px"
+    törlésGomb.style.cursor = "pointer"
+    
+    újelem.appendChild(törlésGomb)
     FeladatokDiv.appendChild(újelem);
+    
 }
 function dragstartHandler(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
@@ -41,4 +54,7 @@ function dropHandler(ev) {
     if(ev.target.id=="Feladatok"){
     elem.style.backgroundColor = "rgb(245,245,220)";
   }
+}
+function törlés(id){
+    document.getElementById(id).remove()
 }
