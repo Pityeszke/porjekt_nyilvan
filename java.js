@@ -29,7 +29,7 @@ function hozzáad(){
     
     újelem.appendChild(törlésGomb)
     FeladatokDiv.appendChild(újelem);
-    localStorage.setItem(újelem.id,újelem)
+    localStorage.setItem(újelem.id, FeladatInput);
 }
 function dragstartHandler(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
@@ -57,4 +57,34 @@ function dropHandler(ev) {
 }
 function törlés(id){
     document.getElementById(id).remove()
+}
+window.onload = function() {
+    var FeladatokDiv = document.getElementById("Feladatok");
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        if (key.startsWith("elem")) {
+            let value = localStorage.getItem(key);
+
+            let újelem = document.createElement("div");
+            újelem.className = "feladat";
+            újelem.textContent = value;
+            újelem.draggable = true;
+            újelem.ondragstart = dragstartHandler;
+            újelem.id = "elem" + Math.floor(Math.random() * 10000);
+            újelem.style.backgroundColor = "rgb(245,245,220)";
+            let törlésGomb = document.createElement("button");
+            törlésGomb.onclick = function() {
+                törlés(újelem.id);
+                localStorage.removeItem(újelem.id);
+            }
+            törlésGomb.textContent = "X";
+            törlésGomb.style.backgroundColor = "red";
+            törlésGomb.style.border = "none";
+            törlésGomb.style.borderRadius = "5px";
+            törlésGomb.style.margin = "5px";
+            törlésGomb.style.cursor = "pointer";
+            újelem.appendChild(törlésGomb);
+            FeladatokDiv.appendChild(újelem);
+        }
+    }
 }
